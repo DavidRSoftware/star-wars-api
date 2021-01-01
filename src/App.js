@@ -13,8 +13,6 @@ function App() {
   const [results, setResults] = useState("");
   const [resultsDisplay, setResultsDisplay] = useState("");
   const [searchTerm, updateTerm] = useState("");
-  const [previous, updatePrevious] = useState("");
-  const [next, updateNext] = useState("");
 
   useEffect(() => {
     axios
@@ -30,6 +28,7 @@ function App() {
       });
   }, []);
 
+  //this functions allows the seach bar to filter the results of the api call
   const updateResults = (newTerm) => {
     updateTerm(newTerm);
     const newResults = results.filter((value) =>
@@ -38,6 +37,7 @@ function App() {
     setResultsDisplay(newResults);
   };
 
+  //this function either displays a error message when the api call results in a error or displays the results of the api call
   const getResults = () => {
     if (resultsDisplay === "error")
       return (
@@ -57,6 +57,7 @@ function App() {
     else return "Loading...";
   };
 
+  //this function allows the seach bar to remain hidden when the api call results in a error
   const renderSearchBar = () => {
     if (resultsDisplay !== "error") {
       return (
@@ -81,7 +82,9 @@ function App() {
 
   return (
     <Container data-testid="app-component">
-      <h2 data-testid="heading" className="my-4 title">Star Wars Characters</h2>
+      <h2 data-testid="heading" className="my-4 title">
+        Star Wars Characters
+      </h2>
       <Row>
         <Col>{renderSearchBar()}</Col>
       </Row>

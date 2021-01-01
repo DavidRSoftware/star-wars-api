@@ -1,3 +1,6 @@
+# Star Wars
+This project queries the star wars api and allows the user to filter the results of the api call
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
