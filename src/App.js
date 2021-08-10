@@ -7,6 +7,7 @@ import searchIcon from "./searchIcon.svg";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import ListGroup from "react-bootstrap/ListGroup";
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 
 function App() {
@@ -73,7 +74,7 @@ function App() {
             placeholder="filter characters"
             aria-label="filter characters"
             aria-describedby="searchIcon"
-            className="yellow"
+            className="yellow filter-characters"
           />
         </InputGroup>
       );
@@ -82,7 +83,7 @@ function App() {
 
   return (
     <Container data-testid="app-component">
-      <h2 data-testid="heading" className="my-4 title">
+      <h2 className="my-4 title">
         Star Wars Characters
       </h2>
       <Row>
